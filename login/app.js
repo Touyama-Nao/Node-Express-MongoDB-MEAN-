@@ -7,7 +7,8 @@ var logger = require('morgan');
 //加载路由控制器
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var register = require('./routes/register');
+var login = require('./routes/login');
+//var register = require('./routes/register');
 
 var app = express();
 
@@ -24,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //将路由控制器设置为中间件
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/register',register);
+//app.use('/register',register);
+app.use('/login',login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

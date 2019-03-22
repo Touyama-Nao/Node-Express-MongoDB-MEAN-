@@ -9,7 +9,7 @@ var dummyDb = [
     {username: 'name1',password:'123456'},
     {username: 'name2',password:'111111'},
     {username: 'name1',password:'222222'}
-]
+];
 
 
 router.get('/',function(req,res){   //get请求用来呈现登陆界面
