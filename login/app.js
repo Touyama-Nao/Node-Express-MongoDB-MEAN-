@@ -4,8 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//加载路由控制器
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var register = require('./routes/register');
 
 var app = express();
 
@@ -19,8 +21,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//将路由控制器设置为中间件
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/register',register);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
